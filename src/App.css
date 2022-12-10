@@ -16,3 +16,81 @@ div.App > h1{
   pointer-events: none;
 }
 
+/* Calculator StyleSheet */
+input {
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+input:focus {
+  background-color: aquamarine;
+  color: black;
+  border: 1px solid tomato;
+  transition: background-color 2s ease-in;
+}
+
+
+button {
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 2px solid tomato;
+  margin-right: 0.2rem;
+  width: 6rem;
+}
+
+button:hover {
+  background-color: tomato;
+}
+
+button:nth-last-child(1), button:nth-last-child(2) {
+  background-color: tomato;
+}
+
+button:nth-last-child(1):hover, button:nth-last-child(2):hover {
+  background-color: aquamarine;
+  color: white;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+/* Footer  */
+footer {
+  display: flex;
+  flex: 1;
+  margin-top: 2rem;
+}
+
+ footer ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+footer ul li{
+  margin-bottom: 0.4rem;
+ 
+}
+footer ul li a {
+  color: antiquewhite;
+}
+footer ul a:hover {
+  color: tomato;
+}
+
+div.copyright {
+  float: right;
+  color: blue;
+  
+}
+
+footer {
+  width: 90%;
+  height: auto;
+  padding: 1rem;
+  background-color: black;
+  color: whitesmoke;
+  position: fixed;
+  bottom: 0;
+}
