@@ -11,6 +11,7 @@ import Music from './componet/music/Music';
 import Summary from './componet/summary/Summay';
 import SummaryProvider from './providers/SummaryProvider';
 import CostSummary from './componet/summary/CostSummary';
+import Todo from './componet/todo/Todo';
 
 
 
@@ -29,12 +30,11 @@ function App() {
               <SummaryProvider>
                      <Summary/>
               </SummaryProvider>
-       
-            
             }/>
+            <Route path='/todo' element={<Todo/>} />
           <Route path='/music' element={<Music/>} />
         </Routes>
-        {/* <Footer/> */}
+        <Footer/>
         
 
     </div>
