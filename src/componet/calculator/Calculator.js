@@ -51,12 +51,12 @@ const Calculator = () => {
                     
                 />
                 <br/>
-                <button onClick={add}>Add</button>
-                <button onClick={sub}>Subtract</button>
-                <button onClick={mul}>Multiply</button>
-                <button onClick={divide}>Divide</button>
-                <button onClick={resetInput}>ResetInput</button>
-                <button onClick={resetResult}>RestResult</button>
+                <button className="cal-btn" onClick={add}>Add</button>
+                <button className="cal-btn" onClick={sub}>Subtract</button>
+                <button className="cal-btn" onClick={mul}>Multiply</button>
+                <button className="cal-btn" onClick={divide}>Divide</button>
+                <button className="cal-btn" onClick={resetInput}>ResetInput</button>
+                <button className="cal-btn" onClick={resetResult}>RestResult</button>
             </form>
         </div>
     )

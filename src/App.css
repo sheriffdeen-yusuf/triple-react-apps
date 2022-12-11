@@ -32,7 +32,7 @@ input:focus {
 }
 
 
-button {
+button.cal-btn {
   padding: 1rem;
   border-radius: 0.8rem;
   border: 2px solid tomato;
@@ -40,15 +40,15 @@ button {
   width: 6rem;
 }
 
-button:hover {
+button.cal-btn:hover {
   background-color: tomato;
 }
 
-button:nth-last-child(1), button:nth-last-child(2) {
+button.cal-btn:nth-last-child(1), button.cal-btn:nth-last-child(2) {
   background-color: tomato;
 }
 
-button:nth-last-child(1):hover, button:nth-last-child(2):hover {
+button.cal-btn:nth-last-child(1):hover, button.cal-btn:nth-last-child(2):hover {
   background-color: aquamarine;
   color: white;
   font-weight: 900;

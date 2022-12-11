@@ -9,6 +9,8 @@ import Header from './componet/Header';
 import {Route, Routes } from 'react-router-dom';
 import Music from './componet/music/Music';
 import Summary from './componet/summary/Summay';
+import SummaryProvider from './providers/SummaryProvider';
+import CostSummary from './componet/summary/CostSummary';
 
 
 
@@ -23,10 +25,16 @@ function App() {
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/calculator' element={<Calculator/>}/>
-          <Route path='/summary' element={<Summary/>}/>
+            <Route path='/summary' element={
+              <SummaryProvider>
+                     <Summary/>
+              </SummaryProvider>
+       
+            
+            }/>
           <Route path='/music' element={<Music/>} />
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
         
 
     </div>
