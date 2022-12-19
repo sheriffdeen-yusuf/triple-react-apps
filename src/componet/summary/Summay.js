@@ -42,15 +42,24 @@ const Summary = (props) => {
     const [product, setProduct] = useState([]);
     
     function addProduct(clicked){
-        setProduct([...product, clicked])
+        let foundItem = product.find(p => p.id === clicked.id);
+        if(foundItem){
+            foundItem.count += 1
+            setProduct([
+                ...product,
+            ])
+        }
+        else {
+            setProduct([
+                ...product,
+                clicked
+            ])
+        }
     }
 
-    function calculatePrice(purchase){
-        purchase.forEach(product => {
-            sum += product.price
-        });
-        return sum
-    }
+   let costTotal = product.map((item) => item.price * item.count)
+    .reduce((a, b) => a + b, 0);
+
 
     const classes = useStyles()
     return(
@@ -70,9 +79,10 @@ const Summary = (props) => {
                                             <p>Remain: {item.remaining}</p>
                                             <Button onClick={() => {
                                                 addProduct({
+                                                    id: item.id,
                                                     product: item.product,
                                                     price: item.price,
-                                                    clicked: 1
+                                                    count: 1
                                                 })
                                             }} variant="contained" color="primary">Add to chart</Button>
                                     </Paper> 
@@ -87,11 +97,12 @@ const Summary = (props) => {
                 <Grid item xs={4}>
                     <Paper className={classes.paper}>
                         <h4>summary card</h4>
-                        {
-                            product.map((p, i) => <h5>{p.product} cost {p.price}</h5>)
-                        }
                         <hr/>
-                        <h4 style={{color: "tomato"}}>Cost Total: {calculatePrice(product)}</h4>
+                        <h4 style={{color: "tomato"}}>Cost Total: {costTotal}</h4>
+                        {
+                            product.map((p, i) => <h5>{p.product} cost {p.price} x {p.count}</h5>)
+                        }
+                       
                     </Paper>
                 </Grid>
             </Grid>
